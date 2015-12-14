@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Help {
 
-    public static String HELP_FILE = "help.txt";
+    private static final String HELP_FILE = "help.txt";
 
     protected static boolean showHelp() {
         File file = new File(HELP_FILE);

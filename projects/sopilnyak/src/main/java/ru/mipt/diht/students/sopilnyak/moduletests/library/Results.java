@@ -28,8 +28,8 @@ public class Results {
         }
     }
 
-    public static void sendGeoQuery(String query) {
-        geoQuery.setQuery(query);
+    public static void sendGeoQuery(String qeoQueryString) {
+        geoQuery.setQuery(qeoQueryString);
     }
 
     public static ArrayList<String> printResults() throws UnknownLocationException, TwitterException {
