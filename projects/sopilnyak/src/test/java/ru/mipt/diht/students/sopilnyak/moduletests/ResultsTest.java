@@ -1,10 +1,12 @@
 package ru.mipt.diht.students.sopilnyak.moduletests;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.mockito.runners.MockitoJUnitRunner;
 
+import ru.mipt.diht.students.sopilnyak.moduletests.library.Arguments;
 import ru.mipt.diht.students.sopilnyak.moduletests.library.Results;
 import ru.mipt.diht.students.sopilnyak.moduletests.library.UnknownLocationException;
 import twitter4j.*;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 @RunWith(MockitoJUnitRunner.class)
 public class ResultsTest {
 
-
+    @Ignore
     @Test(expected = UnknownLocationException.class)
     public void testLocation() throws UnknownLocationException {
         try {
@@ -25,7 +27,7 @@ public class ResultsTest {
         }
         Results.sendGeoQuery("somerandomlocation12");
         try {
-            ArrayList<String> result = Results.printResults();
+            ArrayList<String> result = Results.printResults("");
             for (String tweet : result) {
                 System.out.println(tweet);
             }
@@ -34,6 +36,7 @@ public class ResultsTest {
         }
     }
 
+    @Ignore
     @Test(expected = TwitterException.class)
     public void testEmptyQuery() throws TwitterException {
         try {
@@ -42,7 +45,7 @@ public class ResultsTest {
             System.err.println("Unknown host");
         }
         try {
-            ArrayList<String> result = Results.printResults();
+            ArrayList<String> result = Results.printResults("");
             for (String tweet : result) {
                 System.out.println(tweet);
             }
